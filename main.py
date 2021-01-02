@@ -1,0 +1,5 @@
+a,player,parse=[0]*9,1,lambda i:"".join(map(lambda x:" XO"[x],i))
+printer=lambda n:"\n".join([parse(n[0:3]),parse(n[3:6]),parse(n[6:9])])
+c=lambda b:max(a[c//5]&a[c//5+c%5]&a[c//5+c%5*2]for c in[1,3,4,8,12,13,16,31])
+while not c(a):a[input("Pos: ") - 1] = player;player ^= 3;print(printer(a))
+else:print(" OX"[player] + " has won this game of tic-tac-toe!")
